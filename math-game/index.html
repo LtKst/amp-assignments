@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Math game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body onload="NextQuestion()">
+
+    <div id="container">
+
+        <div id="problem">
+            <p id="question">1 * 1 = ?</p>
+        </div>
+
+        <div id="timer">
+            <br>
+            30
+        </div>
+
+        <div id="answerDiv">
+            <input id="answer" type="number" onkeypress="handle(event)" autofocus>
+            <!--<br><br>
+            <input type="button" value="Submit" onclick="CheckAnswer()">-->
+        </div>
+
+        <div id="feedback">
+            <p id="result">Result:</p>
+            <!--<input type="button" value="Next" onclick="NextQuestion()">-->
+        </div>
+
+        <div id="score">
+            <div id="results">
+                <div id="correctBar">0%</div>
+                <div id="incorrectBar">0%</div>
+            </div>
+        </div>
+
+        <div id="level">
+            <p>Level: 0</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="random.js"></script>
+</body>
