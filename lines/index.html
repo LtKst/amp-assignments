@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Draw the line</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid text-center" style="background-color: #020202; color: #fff !important;">
+    <h1>AMP line assignments</h1>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <p>Note: leaving the canvas running for a long period of time will resolve in them slowing down, this is caused by the mousemove
+      event (
+      <code>addEventListener("mousemove", (evt) => { let mousePosition = { x: evt.clientX - rect.left, y: evt.clientY - rect.top
+        }; if (dragStatus) { this.x = mousePosition.x; this.y = mousePosition.y; } });
+      </code>.) I'll try to fix this but I'm not sure how yet.</p>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a class="nav-button" thing="draw-the-line/index.html" href="javascript:void(0)">Draw the line</a>
+      </li>
+      <li>
+        <a class="nav-button" thing="colored-point/index.html" href="javascript:void(0)">Colored point</a>
+      </li>
+    </ul>
+
+    <iframe id="frame" style="border: none; background-color: #e0e0e0; overflow: hidden; width: 100%; height: 600px;" src="draw-the-line/index.html"></iframe>
+  </div>
+
+  <script>
+    var navButtons = $(".nav-button");
+    var frame = $("#frame");
+
+    $("body").click(function (e) {
+      for (let i = 0; i < navButtons.length; i++) {
+        if (e.target == navButtons[i]) {
+          for (let j = 0; j < navButtons.length; j++) {
+            if (j != i) {
+              $(navButtons[j]).parent().removeClass("active");
+            }
+          }
+
+          $(navButtons[i]).parent().addClass("active");
+          frame.attr("src", $(navButtons[i]).attr("thing"));
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
