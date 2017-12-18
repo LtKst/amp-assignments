@@ -25,10 +25,10 @@
       </code>.) I'll try to fix this but I'm not sure how yet.</p>
     <ul class="nav nav-tabs">
       <li class="active">
-        <a class="nav-button" thing="draw-the-line/index.html" href="javascript:void(0)">Draw the line</a>
+        <a class="nav-button" data-assignment-path="draw-the-line/index.html" href="javascript:void(0)">Draw the line</a>
       </li>
       <li>
-        <a class="nav-button" thing="colored-point/index.html" href="javascript:void(0)">Colored point</a>
+        <a class="nav-button" data-assignment-path="colored-point/index.html" href="javascript:void(0)">Colored point</a>
       </li>
     </ul>
 
@@ -49,7 +49,7 @@
           }
 
           $(navButtons[i]).parent().addClass("active");
-          frame.attr("src", $(navButtons[i]).attr("thing"));
+          frame.attr("src", $(navButtons[i]).attr("data-assignment-path"));
         }
       }
     });
